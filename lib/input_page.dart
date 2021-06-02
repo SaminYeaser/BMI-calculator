@@ -16,6 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if(flag == 1) {
       if (maleCardColor == inactiveCardColor) {
         maleCardColor = activeCardColors;
+        femaleCardColor = inactiveCardColor;
       } else {
         maleCardColor = inactiveCardColor;
       }
@@ -23,6 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
     else if(flag == 0){
       if (femaleCardColor == inactiveCardColor) {
         femaleCardColor = activeCardColors;
+        maleCardColor = inactiveCardColor;
       } else {
         femaleCardColor = inactiveCardColor;
       }
