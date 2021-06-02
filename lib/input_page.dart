@@ -1,6 +1,7 @@
 import 'package:bmi/widgets/reuseableCard.dart';
 import 'package:flutter/material.dart';
 import 'colors/colorsSection.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -8,6 +9,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Color maleCardColor = inactiveCardColor;
+  Color femaleCardColor = inactiveCardColor;
+
+  void setColor(int flag){
+    if(flag == 1) {
+      if (maleCardColor == inactiveCardColor) {
+        maleCardColor = activeCardColors;
+      } else {
+        maleCardColor = inactiveCardColor;
+      }
+    }
+    else if(flag == 0){
+      if (femaleCardColor == inactiveCardColor) {
+        femaleCardColor = activeCardColors;
+      } else {
+        femaleCardColor = inactiveCardColor;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,19 +40,68 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(child: ReuseableCard(colour: boxContainerColors)),
-                Expanded(child: ReuseableCard(colour: boxContainerColors))
+                Expanded(
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          setColor(1);
+                        });
+                      },
+                      child: ReuseableCard(
+                  colour: maleCardColor,
+                  cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.mars,
+                          size: 80,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'Male',
+                          style: TextStyle(fontSize: 20),
+                        )
+                      ],
+                  ),
+                ),
+                    )),
+                Expanded(
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          setColor(0);
+                        });
+                      },
+                      child: ReuseableCard(
+                  colour: femaleCardColor,
+                  cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.venus,
+                          size: 80,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text('Female', style: TextStyle(fontSize: 20))
+                      ],
+                  ),
+                ),
+                    ))
               ],
             ),
           ),
           Expanded(
-            child: ReuseableCard(colour: boxContainerColors),
+            child: ReuseableCard(colour: activeCardColors),
           ),
           Expanded(
               child: Row(
             children: [
-              Expanded(child: ReuseableCard(colour: boxContainerColors)),
-              Expanded(child: ReuseableCard(colour: boxContainerColors))
+              Expanded(child: ReuseableCard(colour: activeCardColors)),
+              Expanded(child: ReuseableCard(colour: activeCardColors))
             ],
           )),
           Container(
