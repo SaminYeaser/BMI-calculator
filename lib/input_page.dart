@@ -2,7 +2,6 @@ import 'package:bmi/widgets/reuseableCard.dart';
 import 'package:flutter/material.dart';
 import 'colors/colorsSection.dart';
 
-
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -20,27 +19,23 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                    child: ReuseableCard(colour: Color(0xFF1D1E33))),
-                Expanded(
-                    child: ReuseableCard(colour: Color(0xFF1D1E33)))
+                Expanded(child: ReuseableCard(colour: boxContainerColors)),
+                Expanded(child: ReuseableCard(colour: boxContainerColors))
               ],
             ),
           ),
           Expanded(
-            child: ReuseableCard(colour: Color(0xFF1D1E33)),
+            child: ReuseableCard(colour: boxContainerColors),
           ),
           Expanded(
               child: Row(
             children: [
-              Expanded(
-                  child: ReuseableCard(colour: Color(0xFF1D1E33))),
-              Expanded(
-                  child: ReuseableCard(colour: Color(0xFF1D1E33)))
+              Expanded(child: ReuseableCard(colour: boxContainerColors)),
+              Expanded(child: ReuseableCard(colour: boxContainerColors))
             ],
           )),
           Container(
-            color: Color(0xFFEB1555),
+            color: footerContainerColor,
             height: bottomContainerHeight,
             margin: EdgeInsets.only(top: 10),
             width: double.infinity,
