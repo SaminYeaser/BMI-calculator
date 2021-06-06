@@ -12,16 +12,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Color maleCardColor = inactiveCardColor;
   Color femaleCardColor = inactiveCardColor;
 
-  void setColor(int flag){
-    if(flag == 1) {
+  void setColor(GenderType gender) {
+    if (gender == GenderType.male) {
       if (maleCardColor == inactiveCardColor) {
         maleCardColor = activeCardColors;
         femaleCardColor = inactiveCardColor;
       } else {
         maleCardColor = inactiveCardColor;
       }
-    }
-    else if(flag == 0){
+    } else if (gender == GenderType.female) {
       if (femaleCardColor == inactiveCardColor) {
         femaleCardColor = activeCardColors;
         maleCardColor = inactiveCardColor;
@@ -44,14 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Expanded(
                     child: GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          setColor(1);
-                        });
-                      },
-                      child: ReuseableCard(
-                  colour: maleCardColor,
-                  cardChild: Column(
+                  onTap: () {
+                    setState(() {
+                      setColor(GenderType.male);
+                    });
+                  },
+                  child: ReuseableCard(
+                    colour: maleCardColor,
+                    cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -66,19 +65,19 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(fontSize: 20),
                         )
                       ],
+                    ),
                   ),
-                ),
-                    )),
+                )),
                 Expanded(
                     child: GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          setColor(0);
-                        });
-                      },
-                      child: ReuseableCard(
-                  colour: femaleCardColor,
-                  cardChild: Column(
+                  onTap: () {
+                    setState(() {
+                      setColor(GenderType.female);
+                    });
+                  },
+                  child: ReuseableCard(
+                    colour: femaleCardColor,
+                    cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -90,9 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         Text('Female', style: TextStyle(fontSize: 20))
                       ],
+                    ),
                   ),
-                ),
-                    ))
+                ))
               ],
             ),
           ),
@@ -118,3 +117,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+enum GenderType { male, female }
