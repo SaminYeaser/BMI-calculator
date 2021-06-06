@@ -1,3 +1,4 @@
+import 'package:bmi/widgets/heightSection.dart';
 import 'package:bmi/widgets/reuseableCard.dart';
 import 'package:flutter/material.dart';
 import 'colors/colorsSection.dart';
@@ -62,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         Text(
                           'Male',
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20, color: Colors.grey),
                         )
                       ],
                     ),
@@ -87,7 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(
                           height: 20,
                         ),
-                        Text('Female', style: TextStyle(fontSize: 20))
+                        Text('Female',
+                            style: TextStyle(fontSize: 20, color: Colors.grey))
                       ],
                     ),
                   ),
@@ -96,7 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Expanded(
-            child: ReuseableCard(colour: activeCardColors),
+            child: ReuseableCard(
+              colour: activeCardColors,
+              cardChild: HeightSection(),
+            ),
           ),
           Expanded(
               child: Row(
