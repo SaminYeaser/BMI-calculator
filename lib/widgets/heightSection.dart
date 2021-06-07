@@ -20,9 +20,9 @@ class _HeightSectionState extends State<HeightSection> {
                 child: Text(
               'Height',
             ))),
-        SizedBox(
-          height: 10,
-        ),
+        // SizedBox(
+        //   height: 10,
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -35,17 +35,25 @@ class _HeightSectionState extends State<HeightSection> {
             Text('cm')
           ],
         ),
-        Slider(
-            value: height.toDouble(),
-            min: 120,
-            max: 220,
-            activeColor: Colors.red,
-            inactiveColor: Colors.grey,
-            onChanged: (double newValue) {
-              setState(() {
-                height = newValue.toInt();
-              });
-            })
+        SliderTheme(
+          data: SliderTheme.of(context).copyWith(
+            inactiveTickMarkColor: Color(0xFF8D8E98),
+            activeTickMarkColor: Colors.white,
+            thumbColor: Color(0xFFEB1555),
+            overlayColor: Color(0x29EB1555),
+            overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
+            thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15)
+          ),
+          child: Slider(
+              value: height.toDouble(),
+              min: 120,
+              max: 220,
+              onChanged: (double newValue) {
+                setState(() {
+                  height = newValue.toInt();
+                });
+              }),
+        )
       ],
     );
   }
