@@ -1,5 +1,6 @@
 import 'package:bmi/widgets/heightSection.dart';
 import 'package:bmi/widgets/reuseableCard.dart';
+import 'package:bmi/widgets/weightSection.dart';
 import 'package:flutter/material.dart';
 import 'colors/colorsSection.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -106,7 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
               child: Row(
             children: [
-              Expanded(child: ReuseableCard(colour: activeCardColors)),
+              Expanded(
+                  child: ReuseableCard(
+                colour: activeCardColors,
+                cardChild: WeightSection(),
+              )),
               Expanded(child: ReuseableCard(colour: activeCardColors))
             ],
           )),
