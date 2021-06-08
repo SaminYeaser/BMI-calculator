@@ -1,3 +1,4 @@
+import 'package:bmi/widgets/ageSection.dart';
 import 'package:bmi/widgets/heightSection.dart';
 import 'package:bmi/widgets/reuseableCard.dart';
 import 'package:bmi/widgets/weightSection.dart';
@@ -112,7 +113,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 colour: activeCardColors,
                 cardChild: WeightSection(),
               )),
-              Expanded(child: ReuseableCard(colour: activeCardColors))
+              Expanded(
+                  child: ReuseableCard(
+                colour: activeCardColors,
+                cardChild: AgeSection(),
+              ))
             ],
           )),
           Container(
