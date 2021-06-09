@@ -1,5 +1,6 @@
 import 'package:bmi/colors/colorsSection.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi/modelClass.dart';
 
 class AgeSection extends StatefulWidget {
 
@@ -8,7 +9,9 @@ class AgeSection extends StatefulWidget {
 }
 
 class _AgeSectionState extends State<AgeSection> {
-  int age = 10;
+
+  Bmi obj = new Bmi(10, 50);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +24,7 @@ class _AgeSectionState extends State<AgeSection> {
           padding: EdgeInsets.only(top: 10, bottom: 20),
         ),
         Text(
-          age.toString(),
+          obj.age.toString(),
           style: HugeNumber,
         ),
         Row(
@@ -31,7 +34,7 @@ class _AgeSectionState extends State<AgeSection> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    age = age + 1;
+                    obj.age = obj.age + 1;
                   });
                 },
                 child: Text('+'),
@@ -51,7 +54,7 @@ class _AgeSectionState extends State<AgeSection> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  age = age -1;
+                  obj.age = obj.age -1;
                 });
               },
               child: Text('-'),

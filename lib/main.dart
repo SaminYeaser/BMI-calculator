@@ -1,3 +1,4 @@
+import 'package:bmi/bmiScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'input_page.dart';
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF0F0F1E),
         scaffoldBackgroundColor: Color(0xFF0E0F20),
       ),
-      home: MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MyHomePage(),
+        '/bmi' : (context) => BmiScreen()
+      },
     );
   }
 }

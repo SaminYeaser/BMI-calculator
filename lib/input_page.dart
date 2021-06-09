@@ -1,3 +1,4 @@
+import 'package:bmi/bmiScreen.dart';
 import 'package:bmi/widgets/ageSection.dart';
 import 'package:bmi/widgets/heightSection.dart';
 import 'package:bmi/widgets/reuseableCard.dart';
@@ -120,11 +121,21 @@ class _MyHomePageState extends State<MyHomePage> {
               ))
             ],
           )),
-          Container(
-            color: footerContainerColor,
-            height: bottomContainerHeight,
-            margin: EdgeInsets.only(top: 10),
-            width: double.infinity,
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, '/bmi');
+            },
+            child: Container(
+              color: footerContainerColor,
+              height: bottomContainerHeight,
+              margin: EdgeInsets.only(top: 10),
+              width: double.infinity,
+              child: Center(
+                  child: Text(
+                'Calculate the BMI',
+                style: TextStyle(fontSize: 20, color: Colors.grey),
+              )),
+            ),
           )
         ],
       ),

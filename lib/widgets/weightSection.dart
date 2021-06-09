@@ -1,4 +1,5 @@
 import 'package:bmi/colors/colorsSection.dart';
+import 'package:bmi/modelClass.dart';
 import 'package:flutter/material.dart';
 
 class WeightSection extends StatefulWidget {
@@ -7,7 +8,7 @@ class WeightSection extends StatefulWidget {
 }
 
 class _WeightSectionState extends State<WeightSection> {
-  int weight = 50;
+  Bmi obj = new Bmi(10, 50);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class _WeightSectionState extends State<WeightSection> {
           textBaseline: TextBaseline.alphabetic,
           children: [
             Text(
-              weight.toString(),
+              obj.weight.toString(),
               style: HugeNumber,
             ),
             Text('kg')
@@ -39,7 +40,7 @@ class _WeightSectionState extends State<WeightSection> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    weight = weight + 1;
+                    obj.weight = obj.weight + 1;
                   });
                 },
                 child: Text('+'),
@@ -59,7 +60,7 @@ class _WeightSectionState extends State<WeightSection> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  weight = weight -1;
+                  obj.weight = obj.weight -1;
                 });
               },
               child: Text('-'),
