@@ -1,5 +1,7 @@
 # bmi
-![Screenshot_1623620025](https://user-images.githubusercontent.com/39927379/121823205-7cd6af00-ccc5-11eb-9867-2d81fcdb1b62.png)
+<img src = "https://user-images.githubusercontent.com/39927379/121823205-7cd6af00-ccc5-11eb-9867-2d81fcdb1b62.png" width="300" height="550"><img src = "https://user-images.githubusercontent.com/39927379/121823381-c07de880-ccc6-11eb-9d4e-7c31608c3d73.png"  width="300" height="550">
+
+
 
 A new Flutter project.
 
