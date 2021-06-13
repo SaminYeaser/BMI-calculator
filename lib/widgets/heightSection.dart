@@ -1,4 +1,5 @@
 import 'package:bmi/colors/colorsSection.dart';
+import 'package:bmi/modelClass.dart';
 import 'package:flutter/material.dart';
 
 class HeightSection extends StatefulWidget {
@@ -7,7 +8,7 @@ class HeightSection extends StatefulWidget {
 }
 
 class _HeightSectionState extends State<HeightSection> {
-  int height = 180;
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class _HeightSectionState extends State<HeightSection> {
           textBaseline: TextBaseline.alphabetic,
           children: [
             Text(
-              height.toString(),
+              Bmi.height.toString(),
               style: HugeNumber,
             ),
             Text('cm')
@@ -45,12 +46,12 @@ class _HeightSectionState extends State<HeightSection> {
             thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15)
           ),
           child: Slider(
-              value: height.toDouble(),
+              value: Bmi.height.toDouble(),
               min: 120,
               max: 220,
               onChanged: (double newValue) {
                 setState(() {
-                  height = newValue.toInt();
+                  Bmi.height = newValue.toInt();
                 });
               }),
         )

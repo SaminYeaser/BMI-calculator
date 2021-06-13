@@ -8,7 +8,7 @@ class WeightSection extends StatefulWidget {
 }
 
 class _WeightSectionState extends State<WeightSection> {
-  Bmi obj = new Bmi(10, 50);
+  Bmi obj = new Bmi();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _WeightSectionState extends State<WeightSection> {
           textBaseline: TextBaseline.alphabetic,
           children: [
             Text(
-              obj.weight.toString(),
+              Bmi.weight.toString(),
               style: HugeNumber,
             ),
             Text('kg')
@@ -40,7 +40,7 @@ class _WeightSectionState extends State<WeightSection> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    obj.weight = obj.weight + 1;
+                    Bmi.weight = Bmi.weight + 1;
                   });
                 },
                 child: Text('+'),
@@ -60,7 +60,7 @@ class _WeightSectionState extends State<WeightSection> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  obj.weight = obj.weight -1;
+                  Bmi.weight = Bmi.weight -1;
                 });
               },
               child: Text('-'),

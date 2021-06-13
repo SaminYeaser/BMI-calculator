@@ -1,9 +1,15 @@
-class Bmi{
-  int age, weight;
+import 'dart:math';
+class Bmi {
 
-  Bmi(this.age,this.weight);
+  static int height = 180;
+  static int weight = 50;
+  static int age = 20;
+  static String comment = '';
 
-  void BmiCalculator(){
-    // double bmi =
-  }
+  // String BmiCalculator(){
+  //   double bmi = weight/pow(height/100,2);
+  //   print(bmi);
+  //   return bmi.toString();
+  // }
+
 }

@@ -10,7 +10,6 @@ class AgeSection extends StatefulWidget {
 
 class _AgeSectionState extends State<AgeSection> {
 
-  Bmi obj = new Bmi(10, 50);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class _AgeSectionState extends State<AgeSection> {
           padding: EdgeInsets.only(top: 10, bottom: 20),
         ),
         Text(
-          obj.age.toString(),
+          Bmi.age.toString(),
           style: HugeNumber,
         ),
         Row(
@@ -34,7 +33,7 @@ class _AgeSectionState extends State<AgeSection> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    obj.age = obj.age + 1;
+                    Bmi.age = Bmi.age + 1;
                   });
                 },
                 child: Text('+'),
@@ -54,7 +53,7 @@ class _AgeSectionState extends State<AgeSection> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  obj.age = obj.age -1;
+                  Bmi.age = Bmi.age -1;
                 });
               },
               child: Text('-'),
